@@ -21,14 +21,14 @@ function Layout(props) {
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-        <link rel="stylesheet" href="/css/watson-react-components.min.css" />
-        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/ibm/css/watson-react-components.min.css" />
+        <link rel="stylesheet" href="/ibm/css/style.css" />
       </head>
       <body>
         <div id="root">
           {children}
         </div>
-        <script type="text/javascript" src="js/bundle.js" />
+        <script type="text/javascript" src="ibm/js/bundle.js" />
         {/*<script type="text/javascript" src="https://cdn.rawgit.com/watson-developer-cloud/watson-developer-cloud.github.io/master/analytics.js" />*/}
       </body>
     </html>
