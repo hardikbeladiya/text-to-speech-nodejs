@@ -60,6 +60,7 @@ export default class Demo extends Component {
     };
 
     this.audioElementRef = React.createRef();
+    this.downloadLinkRef = React.createRef();
 
     this.onTabChange = this.onTabChange.bind(this);
     this.onTextChange = this.onTextChange.bind(this);
@@ -114,7 +115,12 @@ export default class Demo extends Component {
   onDownload(event) {
     event.target.blur();
     const params = this.setupParamsFromState(true);
-    window.location.href = `/api/v1/synthesize?${params.toString()}`;
+    // window.location.href = `/api/v1/synthesize?${params.toString()}`;
+    const a = this.downloadLinkRef.current;
+    a.download = 'output.mp3';
+    a.href = `/api/v1/synthesize?${params.toString()}`;
+    a.click();
+    a.href = '';
   }
 
   onSpeak(event) {
@@ -268,15 +274,16 @@ export default class Demo extends Component {
                   type="button"
                   onClick={this.onDownload}
                   disabled={this.downloadDisabled()}
-                  className="base--button download-button hidden"
+                  className="base--button download-button"
                 >
                   Download
                 </button>
-                <ConditionalSpeakButton
-                  loading={loading}
-                  onClick={this.onSpeak}
-                  disabled={this.speakDisabled()}
-                />
+                <a ref={this.downloadLinkRef} className="hidden"/>
+                {/*<ConditionalSpeakButton*/}
+                {/*  loading={loading}*/}
+                {/*  onClick={this.onSpeak}*/}
+                {/*  disabled={this.speakDisabled()}*/}
+                {/*/>*/}
               </div>
               <div className={!loading && hasAudio ? 'reset-container' : 'reset-container dimmed'}>
                 <Icon type="reset" />
