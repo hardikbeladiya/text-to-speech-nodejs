@@ -226,12 +226,6 @@ export default class Demo extends Component {
       <section className="_container _container_large">
         <div className="row">
           <h2 className="base--h2 title">
-            Input Text
-          </h2>
-          <p className="base--p normalfont">
-            {TEXT_DESCRIPTION}
-          </p>
-          <h2 className="base--h2 title">
             Voice Selection
           </h2>
 		      <p className="base--p normalfont">
@@ -279,11 +273,11 @@ export default class Demo extends Component {
                   Download
                 </button>
                 <a ref={this.downloadLinkRef} className="hidden"/>
-                {/*<ConditionalSpeakButton*/}
-                {/*  loading={loading}*/}
-                {/*  onClick={this.onSpeak}*/}
-                {/*  disabled={this.speakDisabled()}*/}
-                {/*/>*/}
+                <ConditionalSpeakButton
+                  loading={loading}
+                  onClick={this.onSpeak}
+                  disabled={this.speakDisabled()}
+                />
               </div>
               <div className={!loading && hasAudio ? 'reset-container' : 'reset-container dimmed'}>
                 <Icon type="reset" />
