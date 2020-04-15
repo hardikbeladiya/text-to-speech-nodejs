@@ -115,10 +115,10 @@ export default class Demo extends Component {
   onDownload(event) {
     event.target.blur();
     const params = this.setupParamsFromState(true);
-    // window.location.href = `/api/v1/synthesize?${params.toString()}`;
+    // window.location.href = `/ibm/api/v1/synthesize?${params.toString()}`;
     const a = this.downloadLinkRef.current;
     a.download = 'output.mp3';
-    a.href = `/api/v1/synthesize?${params.toString()}`;
+    a.href = `/ibm/api/v1/synthesize?${params.toString()}`;
     a.click();
     a.href = '';
   }
@@ -129,7 +129,7 @@ export default class Demo extends Component {
 
     const audio = this.audioElementRef.current;
     audio.setAttribute('type', 'audio/ogg;codecs=opus');
-    audio.setAttribute('src', `/api/v1/synthesize?${params.toString()}`);
+    audio.setAttribute('src', `/ibm/api/v1/synthesize?${params.toString()}`);
 
     this.setState({ loading: true, hasAudio: false });
   }
