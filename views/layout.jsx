@@ -28,7 +28,7 @@ function Layout(props) {
         <div id="root">
           {children}
         </div>
-        <script type="text/javascript" src="ibm/js/bundle.js" />
+        <script type="text/javascript" src="/ibm/js/bundle.js" />
         {/*<script type="text/javascript" src="https://cdn.rawgit.com/watson-developer-cloud/watson-developer-cloud.github.io/master/analytics.js" />*/}
       </body>
     </html>
