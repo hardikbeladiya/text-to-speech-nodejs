@@ -44,7 +44,7 @@ module.exports = (app) => {
   if (!isDev) {
     browserifyier.browserify.transform('uglifyify', { global: true });
   }
-  app.get('/ibm/js/bundle.js', browserifyier);
+  app.get('//ibm/js/bundle.js', browserifyier);
 
   // Configure Express
   app.use(bodyParser.json({ limit: '1mb' }));
